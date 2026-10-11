@@ -42,6 +42,16 @@ pip3 install wgdi
 
 Documentation for installation along with a user tutorial, a default parameter file, and test data are provided. please consult the docs at <http://wgdi.readthedocs.io/en/latest/>.
 
+## Karyotype dotplot
+
+`wgdi -kd config.conf` draws native WGDI karyotype intervals with collinear gene
+dots inside each chromosome. It uses the same `gff1/gff2`, `lens1/lens2`,
+`ancestor_left/ancestor_top`, `position`, and Matplotlib conventions as WGDI
+plots. Chromosome colors and ranges come directly from `ancestor_left`, including
+regions without collinear pairs. SVG, PDF and PNG outputs are supported.
+Run `wgdi -kd '?'` for the template; see the
+[self-contained example and input/parameter reference](examples/karyotype_dotplot/README.md).
+
 ## Tips
 
 Here are some videos with simple examples of WGDI.
