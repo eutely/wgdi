@@ -12,6 +12,7 @@ from wgdi.block_ks import block_ks
 from wgdi.circos import circos
 from wgdi.dotplot import dotplot
 from wgdi.karyotype import karyotype
+from wgdi.karyotype_dotplot import karyotype_dotplot
 from wgdi.karyotype_mapping import karyotype_mapping
 from wgdi.ks import ks
 from wgdi.ks_peaks import kspeaks
@@ -55,6 +56,7 @@ parser.add_argument("-pf", dest="peaksfit", help="Gaussian fitting of ks distrib
 parser.add_argument("-pc", dest="polyploidy_classification", help="Polyploid distinguish among subgenomes")
 parser.add_argument("-a", dest="alignment", help="Show event-related genomic alignment in a dotplot")
 parser.add_argument("-k", dest="karyotype", help="Show genome evolution from reconstructed ancestors")
+parser.add_argument("-kd", dest="karyotype_dotplot", help="Show chromosomes and collinearity dots in a karyotype dotplot")
 parser.add_argument("-ak", dest="ancestral_karyotype", help="Generation of ancestral karyotypes from chromosomes that retain same structures in genomes")
 parser.add_argument("-akr", dest="ancestral_karyotype_repertoire", help="Incorporate genes from collinearity blocks into the ancestral karyotype repertoire")
 parser.add_argument("-km", dest="karyotype_mapping", help="Mapping from the known karyotype result to this species")
@@ -99,6 +101,7 @@ def module_to_run(argument, conf):
         'configure': run_configure,
         'polyploidy_classification': (polyploidy_classification, conf, 'polyploidy classification'),
         'karyotype': (karyotype, conf, 'karyotype'),
+        'karyotype_dotplot': (karyotype_dotplot, conf, 'karyotype_dotplot'),
         'ancestral_karyotype': (ancestral_karyotype, conf, 'ancestral_karyotype'),
         'karyotype_mapping': (karyotype_mapping, conf, 'karyotype_mapping'),
         'ancestral_karyotype_repertoire': (ancestral_karyotype_repertoire, conf, 'ancestral_karyotype_repertoire'),
@@ -136,6 +139,7 @@ def main():
         'improvedcollinearity': 'collinearity.conf',
         'polyploidy_classification': 'polyploidy_classification.conf',
         'karyotype': 'karyotype.conf',
+        'karyotype_dotplot': 'karyotype_dotplot.conf',
         'ancestral_karyotype': 'ancestral_karyotype.conf',
         'ancestral_karyotype_repertoire': 'ancestral_karyotype_repertoire.conf',
         'karyotype_mapping': 'karyotype_mapping.conf',
